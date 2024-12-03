@@ -1,0 +1,125 @@
+/*
+Name: Jamal Bryan
+Date: 11/11/2024
+Assignment: Module 11: Role Based Access Control
+Due Date: 11/11/2024
+About this project: Develop a frontend application that interacts with a database for a small
+scale real-world applications using third-party Python libraries discussed in the course.
+Develop code that encrypts data stored in a database for a small scale using third-party
+Python libraries discussed in the course.
+Assumptions: The application needs an initial admin user to create other users since there is no
+'sign-up' page in the requirements. The password and username for the initial user is 'admin'.
+All work below was performed by Jamal Bryan
+*/
+
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #0056b3;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Button Styling */
+button, input[type="submit"] {
+    background-color: #0056b3;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #003d80;
+}
+
+/* Form Styling */
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #0056b3;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Additional styles for login page error message */
+.error {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+/* Footer Link */
+.footer-link {
+    text-align: center;
+    margin-top: 20px;
+}

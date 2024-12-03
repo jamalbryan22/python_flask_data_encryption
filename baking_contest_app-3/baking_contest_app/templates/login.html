@@ -1,0 +1,49 @@
+<!--
+Name: Jamal Bryan
+Date: 11/24/2024
+Assignment: Module 13: Send Encrypted Message
+Due Date: 11/24/2024
+About this project:
+Solve a simple programming problem based on various approaches to computer security and information management.
+Build a small scale real-world application that incorporates the principles of secure computing including cryptography,
+network security, and data protection
+Assumptions:
+The application creates the database upon execution.
+There are 6 initial users created however there are no contest entries created when the application spins up
+In order to create new users you must be signed in to a user with the highest security level (3)
+The application if you change the application keys you must ensure they work with application. It must be 16 bytes
+The create_baking_contest_db.py script has to be run first.
+All work below was performed by Jamal Bryan-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+
+        <!-- Display error message if login fails -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="error">{{ messages[0] }}</div>
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="{{ url_for('login') }}">
+            <label for="username">Name:</label>
+            <input type="text" name="username" id="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+
+            <input type="submit" value="Log In">
+        </form>
+    </div>
+</body>
+</html>

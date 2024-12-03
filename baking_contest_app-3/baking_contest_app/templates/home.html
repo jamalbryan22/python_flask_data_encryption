@@ -1,0 +1,58 @@
+<!--
+Name: Jamal Bryan
+Date: 11/24/2024
+Assignment: Module 13: Send Encrypted Message
+Due Date: 11/24/2024
+About this project:
+Solve a simple programming problem based on various approaches to computer security and information management.
+Build a small scale real-world application that incorporates the principles of secure computing including cryptography,
+network security, and data protection
+Assumptions:
+The application creates the database upon execution.
+There are 6 initial users created however there are no contest entries created when the application spins up
+In order to create new users you must be signed in to a user with the highest security level (3)
+The application if you change the application keys you must ensure they work with application. It must be 16 bytes
+The create_baking_contest_db.py script has to be run first.
+All work below was performed by Jamal Bryan-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ username }}!</h1>
+
+        <!-- Logout Link -->
+        <a href="{{ url_for('logout') }}">Logout</a>
+
+        <!-- Conditional Links based on Security Level -->
+        <ul>
+            {% if security_level >= 1 %}
+                <li><a href="{{ url_for('my_results') }}">Show My Contest Entry Results</a></li>
+                <li><a href="{{ url_for('add_entry') }}">Add a Contest Entry</a></li>
+            {% endif %}
+
+            {% if security_level >= 2 %}
+            <li><a href="{{ url_for('submit_vote') }}">Submit a Baking Contest Entry Vote</a></li>
+            {% endif %}
+
+            {% if security_level == 3 %}
+                <li><a href="{{ url_for('add_user') }}">Add New Baking Contest User</a></li>
+            {% endif %}
+
+            {% if security_level >= 2 %}
+                <li><a href="{{ url_for('list_users') }}">List Baking Contest Users</a></li>
+            {% endif %}
+
+            {% if security_level == 3 %}
+                <li><a href="{{ url_for('contest_results') }}">Baking Contest Entry Results</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</body>
+</html>

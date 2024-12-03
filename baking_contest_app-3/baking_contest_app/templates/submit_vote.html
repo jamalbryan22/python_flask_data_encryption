@@ -1,0 +1,44 @@
+<!--
+Name: Jamal Bryan
+Date: 11/24/2024
+Assignment: Module 13: Send Encrypted Message
+Due Date: 11/24/2024
+About this project:
+Solve a simple programming problem based on various approaches to computer security and information management.
+Build a small scale real-world application that incorporates the principles of secure computing including cryptography,
+network security, and data protection
+Assumptions:
+The application creates the database upon execution.
+There are 6 initial users created however there are no contest entries created when the application spins up
+In order to create new users you must be signed in to a user with the highest security level (3)
+The application if you change the application keys you must ensure they work with application. It must be 16 bytes
+The create_baking_contest_db.py script has to be run first.
+All work below was performed by Jamal Bryan-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a Vote</title>
+</head>
+<body>
+    <h1>Submit a Baking Contest Entry Vote</h1>
+    <form method="POST">
+        <label for="entry_id">EntryId:</label>
+        <input type="text" name="entry_id" id="entry_id" required><br>
+
+        <label for="excellent_votes">Number of Excellent Votes:</label>
+        <input type="text" name="excellent_votes" id="excellent_votes" required><br>
+
+        <label for="ok_votes">Number of Ok Votes:</label>
+        <input type="text" name="ok_votes" id="ok_votes" required><br>
+
+        <label for="bad_votes">Number of Bad Votes:</label>
+        <input type="text" name="bad_votes" id="bad_votes" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <a href="{{ url_for('home') }}">Go back to Home</a>
+</body>
+</html>
